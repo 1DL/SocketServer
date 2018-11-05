@@ -13,6 +13,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -43,6 +46,14 @@ public class Servidor {
 
                     ServerSocket serverSocket = null;
                     serverSocket = new ServerSocket(5005);
+                    
+                    String pastaPadrao = "C:/Synchro Relatorios";
+
+                    Path diretorioPasta = Paths.get(pastaPadrao);
+                    
+                    if (!Files.exists(diretorioPasta)) {
+                        Files.createDirectory(diretorioPasta);
+                    }
 
                     while (true) {
                         Socket clientSocket = null;
