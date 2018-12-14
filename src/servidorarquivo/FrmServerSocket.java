@@ -6,6 +6,7 @@
 package servidorarquivo;
 
 import java.awt.Point;
+import java.awt.Toolkit;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -24,8 +25,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JScrollBar;
 import javax.swing.UIManager;
 
@@ -52,7 +51,6 @@ public class FrmServerSocket extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmServerSocket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         initComponents();
-
     }
 
     /**
@@ -77,6 +75,7 @@ public class FrmServerSocket extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SynchroSoft - Servidor Socket ");
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/logopng32.png")));
 
         btnIniciarSocketServer.setText("Iniciar Servidor Socket para receber e enviar arquivos");
         btnIniciarSocketServer.addActionListener(new java.awt.event.ActionListener() {
